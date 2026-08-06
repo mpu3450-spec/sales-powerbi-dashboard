@@ -40,9 +40,4 @@ The shipping dashboard focuses on:
 - Average shipping time by region
 - Interactive filtering using Year, Region, Ship Mode, and Segment
 
-## 📈 Key DAX Measures
 
-### Total Sales
-
-```DAX
-Total Sales = SUM(cleaned_sales[Sales])
