@@ -1,0 +1,16 @@
+use sales_db;
+show tables;
+select * from sales;
+select sum(Sales) as Total_sales from sales;
+select count(distinct `Customer ID`) as total_customer  from sales;
+select Category , sum(Sales) as total_sales from sales group by Category order by total_sales desc;
+show columns from  sales;
+select `sub-Category` , sum(Sales) as total from sales  group by `sub-Category` order by total desc limit 5;
+select omonth , oyear , sum(Sales) as total from sales group by omonth , oyear order by  omonth , oyear;
+select omonth , oyear , sum(Sales) as monthly_total from sales group by omonth , oyear order by monthly_total desc limit 5;
+ select `Customer ID` , `Customer Name` , sum(Sales) as total from sales group by `Customer ID`  , `Customer Name` order by total  desc limit 10;
+select Region , avg(order_total) as avg_order_value from (select Region , `Order ID` , SUM(Sales) as order_total from sales group by Region  , `Order ID`) as order_summary group by Region order by avg_order_value desc;
+select `Product Name` , sum(Sales) as total from sales  group by `Product Name` order by total desc limit 10;
+select Segment ,sum(Sales) as total from Sales group by  Segment order by total desc;
+select count(distinct `Order ID` ) as total_order from sales;
+select Region , sum(Sales) as total_sales from sales group by Region order by total_sales desc;
